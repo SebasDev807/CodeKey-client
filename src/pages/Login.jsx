@@ -34,7 +34,7 @@ const Login = () => {
     }
 
     setError('');
-    navigate('/home');
+    navigate('/Resource');
   };
 
   const handleCloseModal = () => {

@@ -1,14 +1,28 @@
+import { useState } from 'react';
+import '../styles/ResourceCard.css';
+import JavaScriptLogoWhite from '../assets/images/javascriptwhite-logo.png'; 
+import JavaScriptLogoBlack from '../assets/images/javascriptblack-logo.png';
 
-// eslint-disable-next-line react/prop-types
-const ResourceCard = ({ title, description }) => {
-    return (
-      <div className="bg-black text-white rounded-lg p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
-        <div className="flex justify-center mb-4">
-          <img src="/path/to/javascript-icon.png" alt={title} className="w-12 h-12" />
-        </div>
-        <h3 className="text-2xl font-semibold mb-4">{title}</h3>
-        <p>{description}</p>
+const ResourceCard = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div 
+      className="resource-card"
+      onMouseEnter={() => setIsHovered(true)} 
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <img 
+        src={isHovered ? JavaScriptLogoBlack : JavaScriptLogoWhite} 
+        alt="JavaScript Logo" 
+        className="resource-logo" 
+      />
+      <div className="resource-title">JavaScript</div>
+      <div className="resource-description">
+        Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T.).
       </div>
-    );
-  };
+    </div>
+  );
+};
+
 export default ResourceCard;
