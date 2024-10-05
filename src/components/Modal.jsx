@@ -6,7 +6,7 @@ const Modal = ({ message, onClose }) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <img src={logo} alt="Icono de advertencia" /> 
+        <img src={logo} alt="Warning icon" /> 
         <h2>Advertencia</h2>
         <p>{message}</p>
         <button onClick={onClose}>Cerrar</button>
